@@ -7,13 +7,13 @@ using namespace std;
 
 class IntentRecognizer
 {
-    regex regexForGetWeather{"What is the weather like today\\?"};
-    regex regexForGetCityWeather{"What is the weather like in [a-zA-Z]+\\s?[a-zA-Z]+ today\\?"};
-    regex regexForCheckCalender{"Am I free at [0-9:]+ (AM|am|PM|PM)? tomorrow\\?"};
-    regex regexForGetFact{"[Ff]act"};
+    regex regexForGetWeather{"([Ww]hat |[Hh]ow )?([Ii]s|[Ww]ill)(.*)?(weather|rain|storm|snow|hot|cold)(.*)?"};
+    regex regexForGetCityWeather{"([Ww]hat|[Hh]ow) (is|will)(.*)?weather(.*)? in (.*)?"};
+    regex regexForCheckCalender{"(free|appointment|meeting) at [0-9:]+ (AM|am|PM|PM)? (.*)?"};
+    regex regexForGetFact{"\\b[Ff]act\\b"};
     std::vector<string> intents_of_request_{
-    "Get Weather", 
     "Get Weather City",
+    "Get Weather",
     "Check Calender",
     "Get Fact" };
     public:

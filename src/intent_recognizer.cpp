@@ -4,11 +4,11 @@ string IntentRecognizer::getIntent(string user_request)
 {
     string intent = "Intent Not Determined";
 
-    if(regex_match(user_request, regexForGetWeather))
+    if(regex_search(user_request, regexForGetCityWeather))
     {
         intent = intents_of_request_[0];
     }
-    else if (regex_match(user_request, regexForGetCityWeather))
+    else if (regex_search(user_request, regexForGetWeather))
     {
         intent = intents_of_request_[1];
     }
